@@ -1,0 +1,57 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="UTF-8" />
+	<style>
+		.dragBtn,.dragBox{
+			border: 1px solid #ccc;
+			height:40px;
+			margin: 10px 5px;
+			line-height: 40px;
+		}
+		.dragBox{
+			width: 300px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.draggable>div>span{
+			padding: 4px 10px;
+			background-color: #eee;
+			border: 1px solid #ccc;
+			margin: 5px;
+			cursor: move;
+			-webkit-touch-callout: none; /* iOS Safari */
+			-webkit-user-select: none; /* Chrome/Safari/Opera */
+			-khtml-user-select: none; /* Konqueror */
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* Internet Explorer/Edge */
+			user-select: none; /* Non-prefixed version, currently not supported by any browser */
+		}
+	</style>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="drag.js"></script>
+<title>拖拽</title>  
+</head>  
+<body>
+	<h3>填入</h3>
+	<div class="draggable" id="drag1">
+	</div>
+	<h3>替换</h3>
+	<div class="draggable" id="drag2">
+		<div class="dragBtn"></div>
+		<div class="dragBox"></div>
+		<div class="dragBox"></div>
+		<div class="dragBox"></div>
+	</div>
+	<script>
+		$('#drag1').tinyDraggable({
+			list:['1','2','3','4'],	//拖拽的内容
+			Boxn:3,						//拖拽盒子的数量
+			type:'add',				//拖拽的类型是填入
+			backFn:function(p){		//拖拽的回调函数,p是拖拽的内容值
+
+			}
+		});
+	</script>
+</body>  
+</html>  
